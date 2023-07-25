@@ -20,10 +20,13 @@ setup(
     packages=['twitch_plays_llm'],
     install_requires=[
         'openai',
+        'fastapi',
         'twitchio',
         'pydantic',
         'pydantic_settings',
         'asgiref',
+        'uvicorn',
+        'uvicorn-loguru-integration',
     ],
     extras_require={
         'dev': ['isort', 'blue'],
