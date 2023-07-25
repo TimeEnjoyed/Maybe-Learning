@@ -48,17 +48,17 @@ function App() {
   // Use useEffect to fetch data from server on mount and every second
   useEffect(() => {
     async function fetchData() {
-      const proposalsRes = await axios.get('http://localhost:9511/proposals');
+      const proposalsRes = await axios.get('/proposals');
   
       // Sort the proposals by vote count in descending order
       const sortedProposals = proposalsRes.data.sort((a, b) => b.vote - a.vote);
       
       setProposals(sortedProposals);
   
-      const storyHistoryRes = await axios.get('http://localhost:9511/story-history');
+      const storyHistoryRes = await axios.get('/story-history');
       setStoryHistory(storyHistoryRes.data);
   
-      const timeInfo = await axios.get('http://localhost:9511/vote-time-remaining')
+      const timeInfo = await axios.get('/vote-time-remaining')
       setTimeInfo(timeInfo.data);
     }
   
